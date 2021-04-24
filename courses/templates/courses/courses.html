@@ -1,0 +1,14 @@
+{% extends 'courses/base.html' %}
+
+{% block title %}| Course List{% endblock %}
+
+{% block content %}
+    <!-- Alerts -->
+    {% include 'partials/_alerts.html' %}
+
+    {% for course in courses %}
+        <div class="border border-dark mt-3 p-4">
+            <strong><a href="{% url 'course-detail' course.id %}">{{ course.title }}</a></strong>
+        </div>
+    {% endfor %}
+{% endblock %}

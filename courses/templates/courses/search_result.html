@@ -1,0 +1,18 @@
+{% extends 'courses/base.html' %}
+{% block title %}| Search Results{% endblock %}
+
+{% block content %}
+    {% if search_result %}
+        <h1>Search Results</h1>
+        {% for res in search_result %}
+            <div class="border border-dark mt-3 p-4">
+                <strong><a href="{% url 'course-detail' res.id %}">{{ res.title }}</a></strong>
+            </div>
+        {% endfor %}
+    {% else %}
+        <h4>There is no results matching your query: "{{ query }}"</h4>
+    {% endif %}
+    <script type="text/javascript">
+        document.getElementById('id_q').value = '{{ query }}'
+    </script>
+{% endblock %}

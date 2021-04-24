@@ -1,0 +1,17 @@
+{% extends 'courses/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="p-4">
+        <h1>{{ course.title }}</h1>
+        <h2>Author: {{ course.author }}</h2>
+        <h4>Starting: {% if course.start_date %}{{ course.start_date|date:'F d, Y' }}{% else %} No info yet{% endif %}</h4>
+        <h4>Ending: {% if course.start_date %}{{ course.start_date|date:'F d, Y' }}{% else %} No info yet{% endif %}</h4>
+        <h4 class="mb-4">Number of lectures: {{ course.lecture_amount }}</h4>
+        {% if object.author == user %}
+            <a href="{% url 'course-update' object.pk %}" class="btn btn-primary">Update Course Info</a>
+            <a href="{% url 'course-delete' object.pk %}" class="btn btn-danger">Delete Course</a>
+        {% endif %}
+    </div>
+{% endblock %}
