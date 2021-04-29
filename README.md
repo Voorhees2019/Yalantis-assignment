@@ -28,8 +28,8 @@ To use POST / PUT / DELETE request methods you must have an account and must pro
 To register an account you can make a POST request to http://127.0.0.1:8000/api/signup/ with the next body: {"username": "your_username_here", "password": "your_password_here"} and get your authorization token as a response.
 If you already have an account you can get your authorization token by making a POST request to http://127.0.0.1:8000/api/login/ with the next body: {"username": "your_username_here", "password": "your_password_here"}.
 ### Endpoints
-1. Get the course list (GET method) / create a new course (POST method): http://127.0.0.1:8000/api/courses/
+1. Get the course list (GET method) / create a new course (POST method): http://127.0.0.1:8000/api/courses/ <br/>
    To create a new course you have to specify a header name "Authorization" with a header value "Token your_token_here".
-2. Get (GET method) / update (PUT method) / delete (DELETE method) a certain course by its id: http://127.0.0.1:8000/api/courses/{id}/
+2. Get (GET method) / update (PUT method) / delete (DELETE method) a certain course by its id: http://127.0.0.1:8000/api/courses/{id}/ <br/>
    Update and delete a course can only the author of that course.
    In order to update or delete a specific course you have to provide a header name "Authorization" with a header value "Token your_token_here".
