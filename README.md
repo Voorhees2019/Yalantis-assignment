@@ -16,7 +16,7 @@ Install dependencies
 ```
 pip install -r requirements.txt
 ```
-For administration (http://127.0.0.1:8000/admin/) you may create a new superuser: `python manage.py createsuperuser` or use the existing one with the username 'admin' and password 'admin1234'.
+For administration (http://127.0.0.1:8000/admin/) you may create a new superuser: `python manage.py createsuperuser` or use the existing one with the username 'admin' and password 'admin1234'. <br/>
 Run the server
 ```
 python manage.py runserver
